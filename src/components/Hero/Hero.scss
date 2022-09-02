@@ -1,0 +1,112 @@
+@use "index" as v;
+.hero {
+  width: 100%;
+  background-color: v.$dark-violet;
+  padding: 10rem 0;
+  position: relative;
+
+  .btn {
+    @include v.btn(white, 1px solid white);
+    border-radius: 8px;
+  }
+  .title {
+    color: white;
+    font-weight: bold;
+  }
+  .text {
+    color: white;
+    text-align: justify;
+    font-weight: 400;
+    padding: 2rem 0;
+  }
+  &__image--top,
+  &__image--bottom {
+    img {
+      max-width: 15rem;
+      position: absolute;
+    }
+  }
+
+  &__image--top {
+    img {
+      right: 0;
+      top: 0;
+      max-width: 35rem;
+      z-index: 99;
+    }
+  }
+
+  &__image--right {
+    position: absolute;
+    right: 0;
+    padding: 0 2rem;
+    top: -3rem;
+    z-index: 10;
+    img {
+      max-width: 50rem;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    &__content {
+      max-width: 45rem;
+      @media (max-width: 991px) {
+        max-width: 35rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 0;
+    padding-bottom: 20px;
+    &__image--top {
+      max-width: 15rem;
+      right: 0;
+      bottom: -20rem;
+      top: auto;
+    }
+
+    &__image--top {
+      overflow: hidden;
+      img {
+        max-width: 15rem;
+        right: 0;
+        bottom: -11rem;
+        top: auto;
+        overflow: hidden;
+      }
+    }
+    &__image--right {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      top: 0;
+      padding: 0;
+      img {
+        padding: 0;
+        padding-bottom: 10px;
+      }
+    }
+
+    &__image--bottom {
+      img {
+        bottom: 28rem;
+      }
+    }
+    &__wrapper {
+      padding: 0;
+      flex-direction: column-reverse;
+      &__content {
+        max-width: 100%;
+        margin: 1rem;
+        text-align: center;
+        padding: 2rem;
+      }
+    }
+  }
+}

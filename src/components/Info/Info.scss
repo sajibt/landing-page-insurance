@@ -1,0 +1,62 @@
+@use "index" as v;
+
+.title--darkbar {
+  @eextend v.title1;
+  &::before {
+    content: "";
+    background-color: v.$dark-violet;
+    opacity: 0.6;
+  }
+}
+
+.info {
+  padding-top: 25rem;
+
+  width: 100%;
+  img {
+    max-width: 7.5rem;
+    padding: 4px;
+  }
+  &__content {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.8rem;
+    padding-top: 8rem;
+
+    h3 {
+      padding: 1.5rem 0;
+      font-weight: 800;
+    }
+    p {
+      padding: 0;
+    }
+
+    &__title {
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .info {
+    &__content {
+      text-align: center;
+      grid-template-columns: repeat(1, 1fr);
+      p {
+        max-width: 75%;
+        margin: auto;
+      }
+      &--title {
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+
+    .title1 {
+      @extend .title1;
+      padding-top: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use "index" as v;
+
+.button {
+  @include v.btn(rgb(255, 255, 255), 1px solid rgb(255, 255, 255));
+  margin: auto;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    padding: 3rem;
+    padding-left: 6rem;
+  }
+  .title1 {
+    color: white;
+    &::before {
+      content: none;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    background-color: v.$dark-violet;
+    padding: 5rem 0;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    max-width: 47rem;
+    position: absolute;
+    color: white;
+    right: 0;
+    top: 2rem;
+    z-index: 99;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner {
+    .title {
+      padding: 2rem;
+      font-weight: bold;
+    }
+    .title1 {
+      font-size: 2.8rem;
+    }
+    &__wrapper {
+      flex-direction: column;
+      text-align: center;
+      .button {
+        margin-top: 1rem;
+      }
+    }
+    img {
+      max-width: 15rem;
+      top: 0;
+    }
+  }
+}

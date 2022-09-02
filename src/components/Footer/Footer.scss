@@ -1,0 +1,100 @@
+@use "index" as v;
+
+footer {
+  background-color: v.$light-grey;
+  position: relative;
+  .footer-art {
+    img {
+      max-width: 40rem;
+      position: absolute;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 2.2rem;
+    padding-bottom: 1.8rem;
+    opacity: 0.5;
+  }
+  .footer {
+    width: 100%;
+
+    &__header {
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        max-width: 15rem;
+      }
+      .media-icon {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        max-width: 22rem;
+        img {
+          max-width: 3rem;
+        }
+      }
+    }
+
+    &__menu {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3erm 0;
+      align-items: center;
+      .company {
+        li {
+          padding: 4px 0;
+          font-weight: 700;
+        }
+      }
+      div {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    .footer {
+      padding: 0 4rem;
+
+      img {
+        max-width: 10rem;
+      }
+      h4 {
+        padding-bottom: 1rem;
+      }
+      &__header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        .logo {
+          padding-bottom: 1.2rem;
+        }
+      }
+
+      .media-icon {
+        max-width: 16rem;
+        img {
+          max-width: 2rem;
+        }
+      }
+      &__menu {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 1rem;
+        .company {
+          li {
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+  }
+}
